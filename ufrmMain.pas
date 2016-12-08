@@ -20,6 +20,8 @@ type
     mnuOperaciones: TPopupMenu;
     btnClose: TBitBtn;
     actClose: TAction;
+    actComerciales: TAction;
+    Comerciales1: TMenuItem;
     procedure actExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure actCloseUpdate(Sender: TObject);

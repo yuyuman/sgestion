@@ -1,146 +1,352 @@
-object frmCatalogo: TfrmCatalogo
-  Left = 0
-  Top = 0
-  Caption = 'frmCatalogo'
-  ClientHeight = 430
-  ClientWidth = 529
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
-  OldCreateOrder = True
-  OnCreate = FormCreate
-  OnDestroy = FormDestroy
+inherited frmCOMERCIALES: TfrmCOMERCIALES
+  Caption = 'COMERCIALES'
+  ClientWidth = 771
+  ExplicitWidth = 787
   PixelsPerInch = 96
   TextHeight = 13
-  object tbCatalogo: TToolBar
-    Left = 0
-    Top = 0
-    Width = 529
-    Height = 49
-    ButtonHeight = 47
-    ButtonWidth = 54
-    Caption = 'tbCatalogo'
-    DisabledImages = imgImagenesGris
-    Images = imgImagenes
-    TabOrder = 0
-    object brnNuevo: TToolButton
-      Left = 0
-      Top = 0
-      Action = actNuevo
-    end
-    object btnGuardar: TToolButton
-      Left = 54
-      Top = 0
-      Action = actGuardar
-    end
-    object btnModificar: TToolButton
-      Left = 108
-      Top = 0
-      Action = actModificar
-    end
-    object btnEliminar: TToolButton
-      Left = 162
-      Top = 0
-      Action = actEliminar
-      ParentShowHint = False
-      ShowHint = False
-    end
-    object btnCancelar: TToolButton
-      Left = 216
-      Top = 0
-      Action = actCancelar
-    end
+  inherited tbCatalogo: TToolBar
+    Width = 771
+    ExplicitWidth = 771
   end
-  object pgcCatalogo: TPageControl
-    Left = 0
-    Top = 49
-    Width = 529
-    Height = 381
-    ActivePage = tsListado
-    Align = alClient
-    TabOrder = 1
-    object tsListado: TTabSheet
-      Caption = 'Listado'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object grdCatalogo: TDBGrid
-        Left = 0
-        Top = 0
-        Width = 521
-        Height = 353
-        Align = alClient
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
-        TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-        OnDblClick = grdCatalogoDblClick
+  inherited pgcCatalogo: TPageControl
+    Width = 771
+    ExplicitWidth = 771
+    inherited tsListado: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 763
+      ExplicitHeight = 353
+      inherited grdCatalogo: TDBGrid
+        Width = 763
+        DataSource = dmCOMERCIALES.dsDatos
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'NOMBRE'
+            Title.Caption = 'Nombre'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DIRECCION'
+            Title.Caption = 'Direcci'#243'n'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CODIGO_POSTAL'
+            Title.Caption = 'C'#243'digo Postal'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CIUDAD'
+            Title.Caption = 'Ciudad'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PROVINCIA'
+            Title.Caption = ' Provincia'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'NIF'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TELEFONO'
+            Title.Caption = 'Tel'#233'fono'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DIRECCION'
+            Title.Caption = 'Direcci'#243'n'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'MOVIL'
+            Title.Caption = 'M'#243'vil'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'FAX'
+            Title.Caption = 'Fax'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'EMAIL'
+            Title.Caption = 'Email'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'WEB'
+            Title.Caption = 'Web'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'OBSERVACIONES'
+            Title.Caption = 'Observaciones'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PAIS'
+            Title.Caption = 'Pa'#237's'
+            Visible = True
+          end>
       end
     end
-    object tsEditor: TTabSheet
-      Caption = 'Datos Generales'
-      ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+    inherited tsEditor: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 763
+      ExplicitHeight = 353
+      object lbl2: TLabel
+        Left = 14
+        Top = 32
+        Width = 37
+        Height = 13
+        Caption = 'Nombre'
+        FocusControl = edtNOMBRE
+      end
+      object lbl3: TLabel
+        Left = 13
+        Top = 67
+        Width = 43
+        Height = 13
+        Caption = 'Direcci'#243'n'
+        FocusControl = edtDIRECCION
+      end
+      object lbl4: TLabel
+        Left = 14
+        Top = 94
+        Width = 17
+        Height = 13
+        Caption = 'CP:'
+        FocusControl = edtCODIGO_POSTAL
+      end
+      object lbl5: TLabel
+        Left = 212
+        Top = 94
+        Width = 39
+        Height = 13
+        Caption = 'CIUDAD'
+        FocusControl = edtCIUDAD
+      end
+      object lbl6: TLabel
+        Left = 223
+        Top = 122
+        Width = 56
+        Height = 13
+        Caption = 'PROVINCIA'
+      end
+      object lbl7: TLabel
+        Left = 14
+        Top = 153
+        Width = 21
+        Height = 13
+        Caption = 'NIF:'
+        FocusControl = edtNIF
+      end
+      object lbl8: TLabel
+        Left = 14
+        Top = 175
+        Width = 42
+        Height = 13
+        Caption = 'Comisi'#243'n'
+        FocusControl = edtCOMISION
+      end
+      object lbl9: TLabel
+        Left = 472
+        Top = 16
+        Width = 42
+        Height = 13
+        Caption = 'Tel'#233'fono'
+        FocusControl = edtTELEFONO
+      end
+      object lbl10: TLabel
+        Left = 472
+        Top = 35
+        Width = 24
+        Height = 13
+        Caption = 'M'#243'vil'
+        FocusControl = edtMOVIL
+      end
+      object lbl11: TLabel
+        Left = 472
+        Top = 67
+        Width = 18
+        Height = 13
+        Caption = 'Fax'
+        FocusControl = edtFAX
+      end
+      object lbl12: TLabel
+        Left = 472
+        Top = 121
+        Width = 24
+        Height = 13
+        Caption = 'Email'
+        FocusControl = edtEMAIL
+      end
+      object lbl13: TLabel
+        Left = 472
+        Top = 94
+        Width = 22
+        Height = 13
+        Caption = 'Web'
+        FocusControl = edtWEB
+      end
+      object lbl14: TLabel
+        Left = 14
+        Top = 121
+        Width = 19
+        Height = 13
+        Caption = 'Pa'#237's'
+      end
+      object lbl16: TLabel
+        Left = 43
+        Top = 240
+        Width = 71
+        Height = 13
+        Caption = 'Observaciones'
+        FocusControl = mmoOBSERVACIONES
+      end
+      object edtNOMBRE: TDBEdit
+        Left = 72
+        Top = 37
+        Width = 364
+        Height = 21
+        DataField = 'NOMBRE'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 0
+      end
+      object edtDIRECCION: TDBEdit
+        Left = 72
+        Top = 64
+        Width = 364
+        Height = 21
+        DataField = 'DIRECCION'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 1
+      end
+      object edtCODIGO_POSTAL: TDBEdit
+        Left = 72
+        Top = 91
+        Width = 134
+        Height = 21
+        DataField = 'CODIGO_POSTAL'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 2
+      end
+      object edtCIUDAD: TDBEdit
+        Left = 280
+        Top = 91
+        Width = 134
+        Height = 21
+        DataField = 'CIUDAD'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 3
+      end
+      object edtNIF: TDBEdit
+        Left = 72
+        Top = 145
+        Width = 97
+        Height = 21
+        DataField = 'NIF'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 4
+      end
+      object edtCOMISION: TDBEdit
+        Left = 72
+        Top = 172
+        Width = 134
+        Height = 21
+        DataField = 'COMISION'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 5
+      end
+      object edtTELEFONO: TDBEdit
+        Left = 530
+        Top = 13
+        Width = 121
+        Height = 21
+        DataField = 'TELEFONO'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 6
+      end
+      object edtMOVIL: TDBEdit
+        Left = 530
+        Top = 40
+        Width = 137
+        Height = 21
+        DataField = 'MOVIL'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 7
+      end
+      object edtFAX: TDBEdit
+        Left = 530
+        Top = 67
+        Width = 124
+        Height = 21
+        DataField = 'FAX'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 8
+      end
+      object edtEMAIL: TDBEdit
+        Left = 529
+        Top = 121
+        Width = 161
+        Height = 21
+        DataField = 'EMAIL'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 9
+      end
+      object edtWEB: TDBEdit
+        Left = 530
+        Top = 94
+        Width = 216
+        Height = 21
+        DataField = 'WEB'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 10
+      end
+      object mmoOBSERVACIONES: TDBMemo
+        Left = 27
+        Top = 259
+        Width = 663
+        Height = 89
+        DataField = 'OBSERVACIONES'
+        DataSource = dmCOMERCIALES.dsDatos
+        TabOrder = 11
+      end
+      object edtPAIS: TDBComboBox
+        Left = 72
+        Top = 118
+        Width = 145
+        Height = 21
+        TabOrder = 12
+      end
+      object edtPROVIDENCIA: TDBComboBox
+        Left = 285
+        Top = 118
+        Width = 145
+        Height = 21
+        TabOrder = 13
+      end
     end
   end
-  object actCatalogo: TActionList
-    Images = imgImagenes
-    Left = 232
-    Top = 240
-    object actGuardar: TDataSetPost
-      Category = 'Dataset'
-      Caption = 'Guardar'
-      Hint = 'Post'
-      ImageIndex = 3
-    end
-    object actNuevo: TDataSetInsert
-      Category = 'Dataset'
-      Caption = 'Nuevo'
-      Hint = 'Nuevo'
-      ImageIndex = 0
-    end
-    object actModificar: TDataSetEdit
-      Category = 'Dataset'
-      Caption = 'Modificar'
-      Hint = 'Modificar'
-      ImageIndex = 1
-    end
-    object actEliminar: TDataSetDelete
-      Category = 'Dataset'
-      Caption = 'Eliminar'
-      Hint = 'Eliminar'
-      ImageIndex = 2
-    end
-    object actCancelar: TDataSetCancel
-      Category = 'Dataset'
-      Caption = 'Cancelar'
-      Hint = 'Cancel'
-      ImageIndex = 4
-    end
-    object actInforme: TAction
-      Caption = 'Informe'
-      OnExecute = actInformeExecute
-    end
-  end
-  object imgImagenes: TImageList
-    ColorDepth = cd32Bit
-    DrawingStyle = dsTransparent
-    Height = 32
-    Width = 32
-    Left = 232
-    Top = 144
+  inherited imgImagenes: TImageList
     Bitmap = {
-      494C010105000800100120002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010105000800180120002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000060606074343
@@ -1203,15 +1409,9 @@ object frmCatalogo: TfrmCatalogo
       FFC003FFFFFFFFFFFFFFFFFF00FF833F00000000000000000000000000000000
       000000000000}
   end
-  object imgImagenesGris: TImageList
-    ColorDepth = cd32Bit
-    DrawingStyle = dsTransparent
-    Height = 32
-    Width = 32
-    Left = 232
-    Top = 192
+  inherited imgImagenesGris: TImageList
     Bitmap = {
-      494C0101050008002C0120002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010105000800340120002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000000000000001010101020202037C7C7C889090
